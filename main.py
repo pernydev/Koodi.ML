@@ -1,4 +1,6 @@
-import http.server
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import time
+
 
 PORTTI="40003"
 
