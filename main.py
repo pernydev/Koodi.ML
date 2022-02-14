@@ -14,11 +14,5 @@ class LinkkiServu(BaseHTTPRequestHandler):
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
     print("Linkki.ML käynnistetty onnistuneedti!")
-
     try:
         webServer.serve_forever()
-    except KeyboardInterrupt:
-        pass
-
-    webServer.server_close()
-    print("Sammutetaan...")
