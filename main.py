@@ -1,4 +1,4 @@
-import SimpleHTTPServer
+import http.server
 
 PORT=40003
 
