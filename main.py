@@ -12,9 +12,7 @@ class LinkkiServu(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html")
         self.end_headers()
         self.wfile.write(bytes("<h1>Toimii!</h1>", "utf-8")
-
-if __name__ == "__main__":        
-    webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Linkki.ML käynnistetty onnistuneedti!")
-    try:
-        webServer.serve_forever()
+     
+webServer = HTTPServer((hostName, serverPort), MyServer
+print("Linkki.ML käynnistetty onnistuneedti!")
+webServer.serve_forever()
