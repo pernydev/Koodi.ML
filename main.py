@@ -1,8 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 
-hostName = 0.0.0.0
-serverPort = 40003
+hostName = "0.0.0.0"
+serverPort = "40003"
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
