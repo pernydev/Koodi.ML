@@ -17,7 +17,7 @@ class MyServer(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Linkki has started" % (hostName, serverPort))
+    print("Linkki has started" % (0.0.0.0, 40003))
 
     try:
         webServer.serve_forever()
