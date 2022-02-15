@@ -2,11 +2,11 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 
 
-PORTTI="40003"
+PORT="40003"
 
-print("Käynnistetääm Linkki.ML paneelia portissa "+PORTTI+"!")
+print("Käynnistetääm Linkki.ML paneelia portissa "+PORT+"!")
 
-class LinkkiServu(BaseHTTPRequestHandler):
+class Linkserver(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
