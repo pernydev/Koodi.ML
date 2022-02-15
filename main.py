@@ -13,6 +13,6 @@ class Linkserver(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes("<h1>Toimii!</h1>", "utf-8")
      
-webServer = HTTPServer((hostName, serverPort), MyServer
+WebServer = HTTPServer((hostName, serverPort), MyServer
 print("Linkki.ML käynnistetty onnistuneedti!")
 webServer.serve_forever()
