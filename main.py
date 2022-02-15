@@ -24,7 +24,7 @@ class MyServer(BaseHTTPRequestHandler):
                     query = urlparse(self.path).query
                     query_components = dict(qc.split("=") for qc in query.split("&"))
                     codeQuery = query_components["codes"]
-                    print("Code: "+codeQuery+"Link"+codes[codeQuery])
+                    print("Code: "+codeQuery+"Link"+code[codeQuery])
         else:
             url = self.path[1:]
             f = open("seelink.txt")
