@@ -10,7 +10,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        if self.path is "/":
+        if self.path == "/":
             self.wfile.write(bytes("<p>front</p>", "utf-8"))
         else:
             self.wfile.write(bytes("<p>created</p>", "utf-8"))
