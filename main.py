@@ -1,9 +1,10 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
+from random import randint
 
 hostName = "0.0.0.0"
 serverPort = 40003
-code = dict()
+codes = dict()
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -17,10 +18,13 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes(code, "utf-8"))
         else:
             url = self.path[1:]
-            pin = "12345"
             f = open("seelink.txt")
             code = f.read()
             f.close()
+            # Make PIN a random 4 number number (Github Copilot)
+            pin = randint(1000, 9000)
+            # add pin with the value url to codes (Github Copilot)
+            codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             self.wfile.write(bytes(code, "utf-8"))
 
