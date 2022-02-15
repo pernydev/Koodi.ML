@@ -24,11 +24,12 @@ class MyServer(BaseHTTPRequestHandler):
             # Make PIN a random 4 number number (Github Copilot)
             pin = randint(1000, 9000)
             # add pin with the value url to codes (Github Copilot)
-            codes[pin] = url
             # make pin a string (Github Copilot)
             pin = str(pin)
+            codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             self.wfile.write(bytes(code, "utf-8"))
+            print("Link created! Pin: "+pin+" Link: "+codes[pin])
 
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
