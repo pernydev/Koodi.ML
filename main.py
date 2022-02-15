@@ -16,6 +16,8 @@ class MyServer(BaseHTTPRequestHandler):
             code = f.read()
             f.close()
             self.wfile.write(bytes(code, "utf-8"))
+        else if self.path == "/favicon.ico":
+            print("Page opening...")
         else:
             url = self.path[1:]
             f = open("seelink.txt")
