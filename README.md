@@ -19,7 +19,3 @@ finnish:
 Yksinkertainen python-koodattu verkkosivusto, jonka avulla voit tehdä linkeistäsi yksinkertaisen koodin.
 
 Koodini on ruma, mutta tämä on tehty kouluprojektia varten.
-
-krediitit: MD211211 (verkkopalvelimen asennus) ja perny (loput koodattu)
-
-tämä on suomeksi käännetty google translatella, perny osaa suomea, md ei ota md
