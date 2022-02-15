@@ -10,10 +10,10 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        if self.path is set:
-            self.wfile.write(bytes("<p>created.</p>", "utf-8"))
+        if self.path is "/":
+            self.wfile.write(bytes("<p>front</p>", "utf-8"))
         else:
-            self.wfile.write(bytes("<p>hello people of the universe welcome to a school project ps sorry for adding this without u perny</p>", "utf-8"))
+            self.wfile.write(bytes("<p>created</p>", "utf-8"))
 
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
