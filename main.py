@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 from random import randint
+from urllib.parse import urlparse , urljoin
 
 hostName = "0.0.0.0"
 serverPort = 40003
@@ -18,6 +19,12 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes(code, "utf-8"))
         elif self.path == "/favicon.ico":
             print("Page opening...")
+        elif self.path == "/codeEndpoint":
+                    # get the code from the query
+                    query = urlparse(self.path).query
+                    query_components = dict(qc.split("=") for qc in query.split("&"))
+                    codeQuery = query_components["code"]
+                    print("Code: "+codeQuery+"Link"+codes[codeQuery])
         else:
             url = self.path[1:]
             f = open("seelink.txt")
