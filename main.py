@@ -17,7 +17,12 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes(code, "utf-8"))
         else:
             url = self.path[1:]
-            self.wfile.write(bytes("<p>created code to "+url+"</p>", "utf-8"))
+            pin = "12345"
+            f = open("seelink.txt")
+            code = f.read()
+            f.close()
+            code = code.replace("%{CODE}%", pin)
+            self.wfile.write(bytes(code, "utf-8"))
 
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
