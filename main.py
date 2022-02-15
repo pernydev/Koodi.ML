@@ -4,7 +4,7 @@ import time
 hostName = "0.0.0.0"
 serverPort = "40003"
 
-class linkki(BaseHTTPRequestHandler):
+class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
@@ -16,7 +16,7 @@ class linkki(BaseHTTPRequestHandler):
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 if __name__ == "__main__":        
-    webServer = HTTPServer((hostName, serverPort), linkki)
+    webServer = HTTPServer((hostName, serverPort), MyServer)
     print("Linkki has started" % (hostName, serverPort))
 
     try:
