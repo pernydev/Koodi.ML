@@ -6,15 +6,15 @@ My code is ugly but this was made for a School project.
 credits:
 MD211211 (setup webserver) and
 perny (coded the rest)
+ 
+ 
+ 
+ 
 
+    
 
-
-
-
-
-
-
-
+  
+  
 finnish:
 Yksinkertainen python-koodattu verkkosivusto, jonka avulla voit tehdä linkeistäsi yksinkertaisen koodin.
 
