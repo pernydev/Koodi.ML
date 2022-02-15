@@ -16,7 +16,7 @@ class Linkki(BaseHTTPRequestHandler):
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 if __name__ == "__main__":        
-    webServer = HTTPServer((hostName, serverPort), Linkki)
+    webServer = HTTPServer((0.0.0.0, 40003), Linkki)
     print("Linkki has started" % (hostName, serverPort))
 
     try:
