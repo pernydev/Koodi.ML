@@ -25,6 +25,8 @@ class MyServer(BaseHTTPRequestHandler):
             pin = randint(1000, 9000)
             # add pin with the value url to codes (Github Copilot)
             codes[pin] = url
+            # make pin a string (Github Copilot)
+            pin = str(pin)
             code = code.replace("%{CODE}%", pin)
             self.wfile.write(bytes(code, "utf-8"))
 
