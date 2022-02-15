@@ -1,8 +1,8 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 
-
-PORT="40003"
+hostname = "localhost"
+serverPort = "40003"
 
 print("Käynnistetääm Linkki.ML paneelia portissa "+PORT+"!")
 
