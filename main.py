@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 from random import randint
-from urllib.parse import urlparse , urljoin
+from urllib.parse import urlparse , urljoin, query
 
 hostName = "0.0.0.0"
 serverPort = 40003
