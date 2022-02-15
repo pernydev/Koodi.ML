@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
+code = dict()
 
 hostName = "0.0.0.0"
 serverPort = 40003
