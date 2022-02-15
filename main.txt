@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>April Template</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
-    <link rel="stylesheet" href="https://cruip.com/wp-content/themes/cruip-2/style.css?ver=1.0.17">
+    <link rel="stylesheet" href="https://cdn.discordapp.com/attachments/937323214110097439/943168220637036594/style.css">
 	<script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
