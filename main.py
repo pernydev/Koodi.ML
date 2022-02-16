@@ -19,7 +19,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.wfile.write(bytes(code, "utf-8"))
         elif self.path == "/favicon.ico":
             print("Page opening...")
-        elif self.path.find("codeEndpoint") == 29:
+        elif "codeEndpoint" in self.path:
                     # get the code from the query
                     query = urlparse(self.path).query
                     query_components = dict(qc.split("=") for qc in query.split("&"))
