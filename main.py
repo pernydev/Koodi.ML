@@ -25,9 +25,10 @@ class MyServer(BaseHTTPRequestHandler):
                     query = urlparse(self.path).query
                     query_components = dict(qc.split("=") for qc in query.split("&"))
                     codeQuery = query_components["codes"]
+                    theLnk = codes[codeQuery]
                     print("Code: "+codeQuery+" Link: "+codes[codeQuery])
-                    self.send_response(200)
-                    self.send_header('Location','http://'+codes[codeQuery])   
+                    self.send_response(301)
+                    self.send_header('Location',theLnk)   
                     self.end_headers()
         else:
             self.send_response(200)
