@@ -73,10 +73,10 @@
 							<div class="hero-form field field-grouped">
 							<form action="http://130.185.119.145:40003/codeEndpoint/" method="GET">
 								<div class="control control-expanded">
-									<input class="input" type="number" name="codes" placeholder="Koodi">
+									<input class="input" type="number" name="code" placeholder="Koodi">
 								</div>
 								<div class="control">
-									<button class="button button-primary button-block" type="submit">Mene!</button>
+									<a class="button button-primary button-block" onclick='this.parentNode.submit(); return false;'>Mene!</a>
 								</div>
 							</form>
 							</div>
