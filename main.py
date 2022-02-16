@@ -10,11 +10,13 @@ codes = dict()
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
-        self.send_header("Content-type", "text/html")
         if self.path == "/":
             f = open("main.txt")
             code = f.read()
             f.close()
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
             self.wfile.write(bytes(code, "utf-8"))
         elif self.path == "/favicon.ico":
             print("Page opening...")
@@ -24,9 +26,12 @@ class MyServer(BaseHTTPRequestHandler):
                     query_components = dict(qc.split("=") for qc in query.split("&"))
                     codeQuery = query_components["codes"]
                     print("Code: "+codeQuery+" Link: "+codes[codeQuery])
+                    self.send_response(200)
                     self.send_header('Location','http://'+codes[codeQuery])   
                     self.end_headers()
         else:
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
             self.end_headers()
             url = self.path[1:]
             f = open("seelink.txt")
