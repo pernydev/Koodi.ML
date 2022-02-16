@@ -76,7 +76,7 @@
 									<input class="input" type="number" name="code" placeholder="Koodi">
 								</div>
 								<div class="control">
-									<a class="button button-primary button-block" onclick='this.parentNode.submit(); return false;'>Mene!</a>
+									<button class="button button-primary button-block" type="submit">Mene!</button>
 								</div>
 							</form>
 							</div>
