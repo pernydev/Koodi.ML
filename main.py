@@ -58,10 +58,8 @@ class MyServer(BaseHTTPRequestHandler):
             elif "https" in url:
                 url = url
             else:
-                url = "http://"+url
-            else:
-                # remove trailing slash
                 url = url[1:]
+                url = "http://"+url
             codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             code = code.replace("%{URL}%", serverUrl)
