@@ -24,11 +24,11 @@ class MyServer(BaseHTTPRequestHandler):
                     # get the code from the query
                     query = urlparse(self.path).query
                     query_components = dict(qc.split("=") for qc in query.split("&"))
-                    codeQuery = query_components["codes"]
+                    codeQuery = query_components["code"]
                     theLnk = codes[codeQuery]
                     print("Code: "+codeQuery+" Link: "+codes[codeQuery])
                     self.send_response(200)
-                    self.wfile.write(bytes("<meta http-equiv = 'refresh' content = '2; url = "+theLnk+"' />", "utf-8"))
+                    self.wfile.write(bytes("<meta http-equiv='refresh' content='2;url="+theLnk+"' />", "utf-8"))
         else:
             self.send_response(200)
             self.send_header("Content-type", "text/html")
