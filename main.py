@@ -10,7 +10,6 @@ codes = dict()
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(200)
         if self.path == "/":
             f = open("main.txt")
             code = f.read()
@@ -23,14 +22,22 @@ class MyServer(BaseHTTPRequestHandler):
         elif self.path == "/favicon.ico":
             print("Page opening...")
         elif "codeEndpoint" in self.path:
-                    # get the code from the query
-                    query = urlparse(self.path).query
-                    query_components = dict(qc.split("=") for qc in query.split("&"))
-                    codeQuery = query_components["code"]
-                    theLnk = codes[codeQuery]
-                    print("Code: "+codeQuery+" Link: "+codes[codeQuery])
-                    self.send_response(200)
-                    self.wfile.write(bytes("<script>window.location.href = 'https://"+theLnk+"';</script>", "utf-8"))
+            # get the code from the query
+            query = urlparse(self.path).query
+            query_components = dict(qc.split("=") for qc in query.split("&"))
+            codeQuery = query_components["code"]
+            if codeQuery in codes:
+                theLnk = codes[codeQuery]
+                print("Code: "+codeQuery+" Link: "+codes[codeQuery])
+                self.send_response(301)
+                self.send_header("Location", theLnk)
+                self.end_headers()
+            else:
+                print("Code: " + codeQuery + " Not found!")
+                self.send_response(404)
+                self.send_header("Content-type", "text/plain")
+                self.end_headers()
+                self.wfile.write(bytes("Code not found!", "utf-8"))
         else:
             self.send_response(200)
             self.send_header("Content-type", "text/html")
@@ -44,12 +51,11 @@ class MyServer(BaseHTTPRequestHandler):
             # add pin with the value url to codes (Github Copilot)
             # make pin a string (Github Copilot)
             pin = str(pin)
-            if "https" in url:
-                url = url[8:]
-            elif "http" in url:
-                url = url[7:]
-            elif "script" in url:
+            if "script" in url:
                 url = serverUrl
+            else:
+                # remove trailing slash
+                url = url[1:]
             codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             code = code.replace("%{URL}%", serverUrl)
