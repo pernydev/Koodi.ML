@@ -33,7 +33,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            url = self.path[1:]
+            url = self.path
             f = open("seelink.txt")
             code = f.read()
             f.close()
