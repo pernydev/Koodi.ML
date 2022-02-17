@@ -27,9 +27,8 @@ class MyServer(BaseHTTPRequestHandler):
                     codeQuery = query_components["codes"]
                     theLnk = codes[codeQuery]
                     print("Code: "+codeQuery+" Link: "+codes[codeQuery])
-                    self.send_response(301)
-                    self.send_header('Location',theLnk)   
-                    self.end_headers()
+                    self.send_response(200)
+                    self.wfile.write(bytes("<meta http-equiv = 'refresh' content = '2; url = "+theLnk+"' />, "utf-8"))
         else:
             self.send_response(200)
             self.send_header("Content-type", "text/html")
