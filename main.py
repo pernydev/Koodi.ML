@@ -50,6 +50,7 @@ class MyServer(BaseHTTPRequestHandler):
             pin = randint(1000, 9000)
             # add pin with the value url to codes (Github Copilot)
             # make pin a string (Github Copilot)
+            url = url[1:]
             pin = str(pin)
             if "script" in url:
                 url = serverUrl
