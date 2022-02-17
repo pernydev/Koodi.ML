@@ -54,9 +54,9 @@ class MyServer(BaseHTTPRequestHandler):
             pin = str(pin)
             if "script" in url:
                 url = serverUrl
-            elif "http" in url:
+            elif "http:/" in url:
                 url = url.replace("http:/", "http://")
-            elif "https" in url:
+            elif "https:/" in url:
                 url = url.replace("https:/", "https://")
             else:
                 url = "http://"+url
