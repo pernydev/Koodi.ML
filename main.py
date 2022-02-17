@@ -54,7 +54,9 @@ class MyServer(BaseHTTPRequestHandler):
             if "script" in url:
                 url = serverUrl
             elif "http" in url:
+                url = url
             elif "https" in url:
+                url = url
             else:
                 url = "http://"+url
             else:
