@@ -53,6 +53,10 @@ class MyServer(BaseHTTPRequestHandler):
             pin = str(pin)
             if "script" in url:
                 url = serverUrl
+            elif "http" in url:
+            elif "https" in url:
+            else:
+                url = "http://"+url
             else:
                 # remove trailing slash
                 url = url[1:]
