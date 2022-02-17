@@ -43,6 +43,10 @@ class MyServer(BaseHTTPRequestHandler):
             # add pin with the value url to codes (Github Copilot)
             # make pin a string (Github Copilot)
             pin = str(pin)
+            if "https" in url:
+                url = url[8:]
+            elif "http" in url:
+                url = url[7:]
             codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             self.wfile.write(bytes(code, "utf-8"))
