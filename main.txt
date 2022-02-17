@@ -71,7 +71,7 @@
 	                        <h1 class="hero-title mt-0">Koodi.ML</h1>
 	                        <p class="hero-paragraph">Koodi.ML on sivu jolla voit luoda koodin joka uudelleenohjaa linkkiin! Luo koodi kirjoittamalla "koodi.ml" linkkisi eteen. Jos sinulla on jo koodi voit kirjoittaa sen tähä.</p>
 							<div class="hero-form field field-grouped">
-							<form action="http://130.185.119.145:40003/codeEndpoint/" method="GET">
+							<form action="https://koodi.ml/codeEndpoint/" method="GET">
 								<div class="control control-expanded">
 									<input class="input" type="number" name="code" placeholder="Koodi">
 								</div>
