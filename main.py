@@ -5,6 +5,7 @@ from urllib.parse import urlparse , urljoin
 
 hostName = "0.0.0.0"
 serverPort = 40003
+serverUrl = "koodi.ml"
 codes = dict()
 
 class MyServer(BaseHTTPRequestHandler):
@@ -47,7 +48,7 @@ class MyServer(BaseHTTPRequestHandler):
             elif "http" in url:
                 url = url[7:]
             elif "script" in url:
-                url = "koodi.ml"
+                url = serverUrl
             codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             self.wfile.write(bytes(code, "utf-8"))
