@@ -46,6 +46,8 @@ class MyServer(BaseHTTPRequestHandler):
                 url = url[8:]
             elif "http" in url:
                 url = url[7:]
+            elif "script" in url:
+                url = "linkki.ml"
             codes[pin] = url
             code = code.replace("%{CODE}%", pin)
             self.wfile.write(bytes(code, "utf-8"))
