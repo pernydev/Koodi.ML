@@ -18,6 +18,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
+            code = code.replace("%{URL}%", serverUrl)
             self.wfile.write(bytes(code, "utf-8"))
         elif self.path == "/favicon.ico":
             print("Page opening...")
@@ -51,6 +52,7 @@ class MyServer(BaseHTTPRequestHandler):
                 url = serverUrl
             codes[pin] = url
             code = code.replace("%{CODE}%", pin)
+            code = code.replace("%{URL}%", serverUrl)
             self.wfile.write(bytes(code, "utf-8"))
             print("Link created! Pin: "+pin+" Link: "+codes[pin])
 
