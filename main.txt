@@ -69,7 +69,7 @@
                     <div class="hero-inner">
 						<div class="hero-copy">
 	                        <h1 class="hero-title mt-0">Koodi.ML</h1>
-	                        <p class="hero-paragraph">Koodi.ML on sivu jolla voit luoda koodin joka uudelleenohjaa linkkiin! Luo koodi kirjoittamalla "koodi.ml" linkkisi eteen. Jos sinulla on jo koodi voit kirjoittaa sen tähä.</p>
+	                        <p class="hero-paragraph">Koodi.ML on sivu jolla voit luoda koodin joka uudelleenohjaa linkkiin! Luo koodi kirjoittamalla "koodi.ml/" linkkisi eteen. Jos sinulla on jo koodi voit kirjoittaa sen tähä.</p>
 							<div class="hero-form field field-grouped">
 							<form action="https://koodi.ml/codeEndpoint/" method="GET">
 								<div class="control control-expanded">
