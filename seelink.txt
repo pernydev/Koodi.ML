@@ -68,7 +68,7 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <p class="hero-paragraph">Mene osoitteeseen <strong>%{URL}%</strong> ja kirjoita koodi:</p>
+	                        <p class="hero-paragraph">Mene osoitteeseen <strong>https://%{URL}%</strong> ja kirjoita koodi:</p>
 	                        <h1 class="hero-title mt-0"><strong>%{CODE}%</strong></h1>
 						</div>
 						<div class="hero-illustration">
